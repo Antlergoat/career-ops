@@ -69,7 +69,9 @@ Use the template in `cv-template.html`. Replace the `{{...}}` placeholders with 
 |-------------|-----------|
 | `{{LANG}}` | `en` or `es` |
 | `{{PAGE_WIDTH}}` | `8.5in` (letter) or `210mm` (A4) |
-| `{{NAME}}` | (from profile.yml) |
+| `{{NAME}}` | (from profile.yml `candidate.full_name`) |
+| `{{TAGLINE}}` | (from profile.yml `candidate.tagline`) |
+| `{{PHOTO_URL}}` | (from profile.yml `candidate.photo_url` — generate-pdf.mjs base64-embeds the image at render time, so any relative path under `templates/` works) |
 | `{{PHONE}}` | (from profile.yml — include with its separator only when `profile.yml` has a non-empty `phone` value; omit both `<span>` and `<span class="separator">` otherwise) |
 | `{{EMAIL}}` | (from profile.yml) |
 | `{{LINKEDIN_URL}}` | [from profile.yml] |

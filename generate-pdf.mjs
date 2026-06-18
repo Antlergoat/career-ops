@@ -138,6 +138,27 @@ async function generatePDF() {
     `file://$1.$2')`
   );
 
+  // Embed local images as base64 data URIs so paths work from any temp directory
+  {
+    const imgRe = /(<img\b[^>]*\bsrc=['"])([^'"]+)(['"][^>]*>)/gi;
+    const embeds = [];
+    let m;
+    while ((m = imgRe.exec(html)) !== null) {
+      const src = m[2];
+      if (src.startsWith('data:') || src.startsWith('http://') || src.startsWith('https://') || src.startsWith('file://')) continue;
+      const imgPath = resolve(__dirname, 'templates', src.replace(/^\.\//, ''));
+      try {
+        const imgData = await readFile(imgPath);
+        const ext = src.split('.').pop().toLowerCase();
+        const mime = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', gif: 'image/gif', webp: 'image/webp', svg: 'image/svg+xml' }[ext] || 'image/png';
+        embeds.push({ from: m[0], to: `${m[1]}data:${mime};base64,${imgData.toString('base64')}${m[3]}` });
+      } catch {
+        console.warn(`⚠️  Image not found, skipping: ${imgPath}`);
+      }
+    }
+    for (const { from, to } of embeds) html = html.replace(from, to);
+  }
+
   // Normalize text for ATS compatibility (issue #1)
   const normalized = normalizeTextForATS(html);
   html = normalized.html;

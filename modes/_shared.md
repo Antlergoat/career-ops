@@ -75,16 +75,19 @@ Block G assesses whether a posting is likely a real, active opening. It does NOT
 
 Classify every offer into one of these types (or hybrid of 2):
 
-| Archetype | Key signals in JD |
-|-----------|-------------------|
-| AI Platform / LLMOps | "observability", "evals", "pipelines", "monitoring", "reliability" |
-| Agentic / Automation | "agent", "HITL", "orchestration", "workflow", "multi-agent" |
-| Technical AI PM | "PRD", "roadmap", "discovery", "stakeholder", "product manager" |
-| AI Solutions Architect | "architecture", "enterprise", "integration", "design", "systems" |
-| AI Forward Deployed | "client-facing", "deploy", "prototype", "fast delivery", "field" |
-| AI Transformation | "change management", "adoption", "enablement", "transformation" |
+| Archetype | Thematic axes (key JD signals) | What they buy |
+|-----------|-------------------------------|---------------|
+| Creative Marketing Lead / Manager | "brand," "creative director," "art direction," "visual identity," "campaign," "creative team," "design," "storytelling," "creative strategy," "creative direction," "brand systems" | Full-stack creative leadership — someone who directs a team AND executes craft |
+| Brand Marketing Manager | "brand narrative," "brand positioning," "brand guidelines," "brand voice," "brand identity," "brand strategy," "visual language," "brand awareness," "brand architecture" | End-to-end brand ownership with execution authority |
+| Product Marketing Manager (PMM) | "GTM," "go-to-market," "product marketing," "launch," "personas," "positioning," "market research," "competitive intelligence," "PMM," "product story," "ICP" | Market intelligence paired with launch execution |
+| Senior Manager / Assistant Director | "people management," "manage a team," "senior manager," "assistant director," "cross-functional leadership," "team lead," "stakeholder alignment," "direct reports" | Leadership scope — someone who directs others, not just self |
+| Marketing Manager (general) | "marketing manager," "integrated campaigns," "content marketing," "demand gen," "channel strategy," "marketing programs," "growth marketing," "marketing communications" | Solid marketing execution with strategic latitude |
+| AI-Forward Creative / Marketing | "AI workflows," "generative AI," "content automation," "agentic," "multi-modal," "AI tools," "creative technologist," "AI content," "prompt engineering," "generative video," "Midjourney," "Stable Diffusion," "AI marketing," "marketing automation" — OR role at an AI/creative tools company (Runway, Midjourney, ElevenLabs, Higgsfield, Anthropic, OpenAI, Adobe Firefly, Figma AI, etc.) | Someone who architects AI-powered creative and marketing systems — not just a user, a builder and orchestrator |
+| Stretch / Prestige (NVIDIA Rule) | Tier-1 company (NVIDIA, Apple, Adobe, Figma, Google, Anthropic, Pixar, Rockstar, EA) + title that undersells the actual JD scope | Brand association at a marquee company — a career asset that compounds |
 
-After detecting archetype, read `modes/_profile.md` for the user's specific framing and proof points for that archetype.
+**AI fluency overlay:** When any archetype above appears at an AI/generative tools company, or when the JD explicitly values AI workflow experience, layer AI fluency as a differentiator — do not replace the primary marketing archetype framing. Nate is a marketer first; AI pipeline depth is what sets him apart from other marketers at that level. Reference `article-digest.md` — specifically the Agentic Marketing Pipeline, Power Automate + AI Builder automation, multi-LLM orchestration, and Yelp bot proof points. Surface these after establishing the core marketing identity, not instead of it.
+
+After detecting archetype, read `modes/_profile.md` for Nate's specific framing and proof points for that archetype. When JD signals span two archetypes, score as a hybrid and note both. Default to `cv.md` as base resume if signals are mixed or absent.
 
 ## Global Rules
 
