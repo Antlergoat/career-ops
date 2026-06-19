@@ -43,6 +43,21 @@ function parseTracker() {
     .filter(Boolean)
 }
 
+// ─── Parse pending pipeline ───────────────────────────────────────────────────
+
+function parsePipeline() {
+  const path = join(ROOT, 'data', 'pipeline.md')
+  if (!existsSync(path)) return []
+
+  const lines = readFileSync(path, 'utf8').split('\n')
+  const entries = []
+  for (const line of lines) {
+    const m = line.match(/^- \[ \] (.+?) \| (.+?) \| (.+)$/)
+    if (m) entries.push({ url: m[1].trim(), company: m[2].trim(), role: m[3].trim() })
+  }
+  return entries
+}
+
 // ─── Load report markdown ─────────────────────────────────────────────────────
 
 function loadReports(apps) {
@@ -109,6 +124,15 @@ function statCard(label, value, color) {
   </div>`
 }
 
+function pendingRow(entry, i) {
+  return `<tr>
+    <td class="c-num">${i + 1}</td>
+    <td class="c-company">${esc(entry.company)}</td>
+    <td class="c-role">${esc(entry.role)}</td>
+    <td class="c-pending-url"><a class="pending-link" href="${esc(entry.url)}" target="_blank" rel="noopener">Open ↗</a></td>
+  </tr>`
+}
+
 function tableRow(app) {
   const btn = app.reportLink
     ? `<button class="report-btn" onclick="openReport('${esc(app.num)}')">View</button>`
@@ -128,8 +152,9 @@ function tableRow(app) {
 
 // ─── Full HTML ────────────────────────────────────────────────────────────────
 
-function buildHTML(apps, stats, reports, ts) {
+function buildHTML(apps, stats, reports, pending, ts) {
   const statsHtml = [
+    statCard('Pending',    pending.length,                        '#f5d060'),
     statCard('Evaluated',  stats.total,                           '#60a5fa'),
     statCard('Applied',    stats.applied,                         '#e8b84b'),
     statCard('In Process', stats.inProcess,                       '#a78bfa'),
@@ -138,6 +163,7 @@ function buildHTML(apps, stats, reports, ts) {
   ].join('\n')
 
   const rowsHtml = apps.map(tableRow).join('\n')
+  const pendingHtml = pending.map(pendingRow).join('\n')
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -226,10 +252,22 @@ body::after{
 .stat-label{font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
 
 /* ── Table ── */
-.tbl-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
-.tbl-title{font-size:.65rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--dim)}
+.tbl-hd{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;
+  cursor:pointer;user-select:none;padding:.3rem 0;
+}
+.tbl-hd:hover .tbl-title{color:var(--gold)}
+.tbl-hd-left{display:flex;align-items:center;gap:.6rem}
+.tbl-chevron{
+  font-size:.7rem;color:var(--dim);transition:transform .2s,color .2s;display:inline-block;
+}
+.tbl-hd:hover .tbl-chevron{color:var(--gold)}
+.tbl-title{font-size:.65rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);transition:color .15s}
 .tbl-count{font-size:.72rem;font-family:var(--mono);color:var(--dim)}
-.tbl-wrap{overflow-x:auto;border:1px solid var(--bd);border-radius:10px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--bd);border-radius:10px;transition:max-height .25s ease}
+
+.tbl-section.collapsed .tbl-wrap{display:none}
+.tbl-section.collapsed .tbl-chevron{transform:rotate(-90deg)}
 
 table{width:100%;border-collapse:collapse;font-size:.875rem}
 thead tr{background:var(--bg2);border-bottom:1px solid var(--bd)}
@@ -265,6 +303,15 @@ td{padding:.8rem 1rem;vertical-align:middle}
 }
 .report-btn:hover{border-color:var(--blue);background:rgba(96,165,250,.08)}
 .dim{color:var(--dim)}
+
+.c-pending-url{width:6rem}
+.pending-link{
+  color:var(--gold);text-decoration:none;font-size:.78rem;font-weight:500;
+  border:1px solid var(--bd);padding:.22rem .55rem;border-radius:4px;transition:all .15s;display:inline-block
+}
+.pending-link:hover{border-color:var(--gold);background:rgba(232,184,75,.08)}
+
+.section-gap{margin-top:2.5rem}
 
 /* ── Modal ── */
 .modal{
@@ -343,9 +390,32 @@ td{padding:.8rem 1rem;vertical-align:middle}
 ${statsHtml}
   </div>
 
-  <section>
-    <div class="tbl-hd">
-      <span class="tbl-title">Applications Pipeline</span>
+  <section class="tbl-section" id="sec-pending">
+    <div class="tbl-hd" onclick="toggleSection('sec-pending')">
+      <div class="tbl-hd-left">
+        <span class="tbl-chevron">▾</span>
+        <span class="tbl-title">Pending Pipeline</span>
+      </div>
+      <span class="tbl-count">${pending.length} queued — found by scan, not yet evaluated</span>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>Company</th><th>Role</th><th>Link</th>
+        </tr></thead>
+        <tbody>
+${pendingHtml || '<tr><td colspan="4" class="dim" style="padding:1rem">Nothing queued — run a scan to find new offers.</td></tr>'}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="tbl-section section-gap" id="sec-applications">
+    <div class="tbl-hd" onclick="toggleSection('sec-applications')">
+      <div class="tbl-hd-left">
+        <span class="tbl-chevron">▾</span>
+        <span class="tbl-title">Applications Pipeline</span>
+      </div>
       <span class="tbl-count">${apps.length} entr${apps.length === 1 ? 'y' : 'ies'}</span>
     </div>
     <div class="tbl-wrap">
@@ -405,6 +475,24 @@ function overlayClick(e) {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal() })
+
+function toggleSection(id) {
+  const el = document.getElementById(id)
+  el.classList.toggle('collapsed')
+  const collapsed = JSON.parse(localStorage.getItem('careerops_collapsed') || '{}')
+  collapsed[id] = el.classList.contains('collapsed')
+  localStorage.setItem('careerops_collapsed', JSON.stringify(collapsed))
+}
+
+;(function restoreCollapsed() {
+  const collapsed = JSON.parse(localStorage.getItem('careerops_collapsed') || '{}')
+  for (const id in collapsed) {
+    if (collapsed[id]) {
+      const el = document.getElementById(id)
+      if (el) el.classList.add('collapsed')
+    }
+  }
+})()
 </script>
 </body>
 </html>`
@@ -415,11 +503,12 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 const apps    = parseTracker()
 const stats   = computeStats(apps)
 const reports = loadReports(apps)
+const pending = parsePipeline()
 const ts      = new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })
-const html    = buildHTML(apps, stats, reports, ts)
+const html    = buildHTML(apps, stats, reports, pending, ts)
 const outPath = join(ROOT, 'dashboard.html')
 
 writeFileSync(outPath, html, 'utf8')
 console.log(`✅  dashboard.html written`)
-console.log(`    ${apps.length} application(s)  ·  avg score: ${stats.avgScore ?? '—'}`)
+console.log(`    ${apps.length} application(s)  ·  ${pending.length} pending  ·  avg score: ${stats.avgScore ?? '—'}`)
 console.log(`    Open: start dashboard.html`)
