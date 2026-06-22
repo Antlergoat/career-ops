@@ -49,3 +49,6 @@ bun.lock
 .claude/memory/
 career-dashboard
 package-lock.json
+
+# Playwright MCP session artifacts
+.playwright-mcp/

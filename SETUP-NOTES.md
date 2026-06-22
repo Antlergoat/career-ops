@@ -171,6 +171,50 @@ https://github.com/andrew-shwetzer/career-ops-plugin
 
 ---
 
+### Session 8 — June 21–22, 2026 (home machine, Claude Code / VS Code)
+
+**Context:** Direct continuation of Session 7. Goal for the night: get Playwright verification working and land the first real application through the pipeline.
+
+**Completed:**
+- Installed the Playwright MCP server: added `.mcp.json` at the project root (`playwright` server via `npx -y @playwright/mcp@latest`). Chromium browser binary was already present locally — no download needed. Required a Claude Code session restart to load; confirmed working after restart (`browser_navigate` / `browser_snapshot` tools available).
+- Re-ran `node scan.mjs` post-restart — 0 new offers (all 23 already queued were de-duped), same 8 stale ATS endpoints as Session 6 (not urgent).
+- Screened three roles from the 23-offer queue before settling on one:
+  - **Notion — Lifecycle Marketing Manager**: rejected without a formal report. Pure growth/MarTech ops role (reverse ETL, webhooks, A/B testing) reporting into Product, not Brand — a different discipline from Nate's background. Also hybrid onsite SF/NYC (Anchor Days Mon/Tue/Thu), not Sacramento-commutable. Comp was strong ($150K–$210K, published) but didn't offset the mismatch.
+  - **Intercom (now branded "Fin") — Principal Product Marketing Manager**: rejected without a formal report. Explicit "7+ years in product marketing, solutions marketing, or competitive intelligence at a B2B SaaS company" requirement at a Principal/senior-IC bar — zero brand/design signal in the JD at all. Comp very strong ($200K–$240K base SF), but functional gap too wide.
+  - **Anthropic — Art Director, Enterprise**: not evaluated. Nate explicitly declined to pursue Anthropic/Perplexity-tier roles tonight due to applicant volume concerns.
+  - Neither Notion nor Intercom URLs were marked processed in `data/pipeline.md` — they remain in Pending since no formal report exists. The rejection reasoning above lives only in this entry; worth a quick re-read before re-evaluating either from scratch.
+- **Evaluated ElevenLabs — Brand Marketing** — report `reports/003-elevenlabs-2026-06-21.md`, **Score: 3.9/5** (just under the 4.0 "good match" bar). Archetype: Brand Marketing Manager (primary) + AI-Forward overlay. Verified live via Playwright (Apply button active, Remote-global, Department: Growth).
+  - Real gap identified: JD wants "5+ years in brand partnerships, activation marketing, or sponsorships at high-growth technology or SaaS companies" — Nate's closest analog is channel-partner enablement / trade-show work at Vulcan Vents, not a direct match. Also no formal budget-ownership metrics in `cv.md` to point to.
+  - Comp estimate: ~$140K–$190K (no published range; estimated from market comps), at or above Nate's $130K–$180K target.
+- Generated the CV PDF for the application: chose the **ATS-safe single-column template** (`cv-template-ats.html`) over the Canva two-column visual design, specifically because this was the first real application through the pipeline and minimizing ATS-parsing risk mattered more than visual branding. Output: `output/cv-nate-oliver-elevenlabs-2026-06-21.pdf` (2 pages). Base resume: `cv-creative-lead.md` per the Resume Routing table, tailored toward partnership/activation language.
+- Drafted application form answers (Block H in the report) for the two free-text questions on ElevenLabs' actual Ashby application form. Went through several revisions — see Decisions below.
+- Updated tracker (`data/applications.md`, entry #3) and `data/pipeline.md` (moved ElevenLabs from Pending to a new Processed section) via the normal TSV → `merge-tracker.mjs` flow.
+- **Nate applied (2026-06-22).** Tracker status updated from `Evaluated` to `Applied` — first real application through the completed pipeline.
+- Installed a new global skill, `anti-ai-writing-style` (`~/.claude/skills/anti-ai-writing-style/SKILL.md`), sourced from `github.com/Antlergoat/NCM-LLM-Wiki` at commit `b363cc3`. Baked an instruction into `modes/_profile.md` (new `## Writing Style — Anti-AI Tells` section) so it auto-applies to all candidate-facing prose (cover letters, form answers, LinkedIn outreach) going forward without needing manual invocation — placed in `_profile.md` rather than `_shared.md` specifically because `_shared.md` is system-layer and would get wiped on the next `update-system.mjs apply`.
+- Researched LinkedIn outreach targets for the ElevenLabs application (`/career-ops contacto`): Luke Harries (Head of Growth — hiring manager, primary target, hook is his public "no PMs" growth philosophy), Gayathri Padmanabhan (Partnerships — peer, alternate), Becky Lee-Roche (Talent — recruiter, lower confidence, most "Talent @ ElevenLabs" people found were tagged Engineering-specific). Drafted all three messages; **not yet sent** — Nate's call.
+- Regenerated `dashboard.html` mid-session: 3 applications, 22 pending, avg score 4.0.
+- **Technical-credibility thread in the resume library** (prompted by Nate's discouragement at repeated "B2B SaaS experience" JD requirements not reflecting his real-but-old technical background): drafted a 4th resume variant, `cv-technical.md`, leading with the Xerox/ASC and Sutter Health builder history (SQL, JavaScript, DHTML, ColdFusion, Java). **Then deliberately abandoned it** after Nate's own review instinct caught the real problem — naming 2000s-era stack by name reads as technically *dated*, not current, which undersells ten real years of marketing leadership without actually fixing the SaaS-recency gap. Deleted `cv-technical.md`. Replaced with the better fix: added a `## Projects` section to all 4 base resumes (`cv.md`, `cv-creative-lead.md`, `cv-pmm.md`, `cv-stretch.md`) surfacing the Agentic Marketing Pipeline (ICM Methodology) and the Yelp Response Bot (in development) as concrete, *current* technical deliverables tied to real marketing outcomes — injecting AI-pipeline technical depth into the existing marketing narrative rather than building a separate engineering identity. The Xerox/Sutter Health jobs stay in Experience as-is, unembellished.
+- Added a standing **Risk Tolerance** note to `modes/_profile.md`: keep surfacing B2B SaaS-tagged roles in scans/pipeline regardless of score — Nate has explicitly opted into applying to some sub-4.0 SaaS-adjacent roles as deliberate career-expansion risks, overriding the normal "discourage below-4.0" default.
+- Added a third Projects entry ("Skill-Mapping Visualization Tool") to all 4 base resumes, sourced from a separate, unrelated repo Nate pointed to mid-session: `D:\AI\Projects\ai-fow\Ai Fog of War` — a design-phase personal project (5 architecture/spec docs + 3 working interactive HTML prototypes, main scanner/worldbuilder app not yet built). Per Nate's explicit instruction, the entry describes the underlying technical architecture and skills (data modeling, a scan-and-classify pipeline, PixiJS + React visualization engineering, procedural ID-seeded icon generation) **without naming the project or revealing its premise** (a game-styled "fog of war" skill-constellation map). Framed honestly as in-development, not a finished product. Note: `article-digest.md` was NOT updated to mirror this — the project lives only in the 4 resume files' Projects sections for now, intentionally kept low-key per the anonymization request.
+- Added a 4th Projects entry ("Knowledge Infrastructure for AI Workflows") to all 4 base resumes, sourced from `D:\AI\Projects\NCM-LLM-Wiki` — Nate's real, currently-active knowledge-management system for New Cal Metals (structured markdown wiki, information-classification taxonomy, decision logs, session-continuity tooling; 20 wiki pages, last session 2026-06-19). This is the actual knowledge backbone behind the already-listed Agentic Marketing Pipeline. Unlike the Skill-Mapping tool, this one names the employer (New Cal Metals — already disclosed elsewhere in the resume) but, per the same instruction, does not name the specific tool/system or its internal classification details. Placed second in the Projects list, directly after the Agentic Marketing Pipeline entry.
+- Generated a sample PDF to verify the new 4-entry Projects section renders correctly: `output/cv-nate-oliver-sample-creative-lead-2026-06-22.pdf` (from `cv-creative-lead.md`, ATS-safe template, no JD tailoring — generic Core Competencies). 2 pages, confirmed working.
+
+**Decisions:**
+- **Process incident — version drift on live form answers:** Block H went through three revisions in one sitting (anti-AI-writing-style pass → mission-accuracy research correction after Nate flagged it → a trim-down pass cutting regurgitated company history). Nate had the live Ashby form open in parallel and pasted an earlier draft (the anti-AI-writing-style version, before the mission-accuracy fix) before the later corrections landed, then submitted with his own small edits. The mission-accuracy fix never made it into the real application. Root cause: revisions were applied via file edit with a prose summary in chat, never re-printed as full copy-paste-ready text after each round, and no check-in on whether a draft had already been pasted. Saved as a feedback memory (`feedback_live_application_editing.md` in the cross-session memory store) so future live-form-editing sessions print the full final text in chat every round and check before revising again. Net impact on this application: minor — the submitted answer describes ElevenLabs' technology quality rather than their actual stated mission (accessibility — "any language, any voice," the Impact Program), which is a real but not disqualifying miss. Noted in the report for interview-prep awareness.
+- Confirmed ElevenLabs' actual mission (via Help Center + About page, verified live): "to make content accessible in any language and in any voice" (2022 founding/dubbing-quality origin), with a current broader vision "to make communication and creation with technology seamless" and a concrete Impact Program (free licenses for accessibility needs and nonprofits). Worth remembering for any future ElevenLabs interview prep — see the note in report 003's Block H.
+- Quick reads on Notion/Intercom (above) were deliberately not written up as formal reports — the goal was speed (one real application tonight), not exhaustive documentation of every reject. If either role becomes relevant again, re-verify rather than trusting old context to still hold.
+
+**Carried forward:**
+- LinkedIn outreach drafted for ElevenLabs but not sent (3 messages: Luke Harries primary, Gayathri Padmanabhan + Becky Lee-Roche alternates) — Nate's to send.
+- 22 offers remain in `data/pipeline.md` Pending (23 minus ElevenLabs, now Processed). Notion Lifecycle Marketing Manager and Intercom Principal PMM are still technically Pending despite being informally screened out tonight (see Decisions) — no report exists for either.
+- Anthropic Art Director, Enterprise and the other 5 Anthropic roles, all 4 Perplexity roles, 2 remaining ElevenLabs roles, 3 Notion roles, 2 Intercom roles, and all 3 Asana roles are completely untouched.
+- `.mcp.json` (Playwright MCP server config) is new and untracked — not committed (wasn't asked to). `.playwright-mcp/` artifact directory (snapshot/log files generated by the Playwright MCP server) is also untracked and not yet in `.gitignore` — worth adding in a future session to avoid clutter.
+- Template selection feature — still deferred (Session 8 showed a real-world need to choose ATS-safe vs. visual per application; the decision logic so far is manual/conversational, not automated).
+- 8 stale ATS endpoints in `portals.yml` — still not urgent, unchanged since Session 6.
+- Portfolio site traffic figure (10K shown, should be 12K) — still unfixed, Webflow not career-ops.
+
+---
+
 ## Targeting Decisions (Locked)
 
 ### Role Type Preference (ranked)
@@ -279,15 +323,20 @@ correct). Not yet used for a real application — that's the next milestone.
 | `generate-pdf.mjs` | ✅ Complete | Base64 image embedding |
 | `dashboard-web.mjs` | ✅ Complete | Browser dashboard generator with pending pipeline + collapsible sections |
 | `CHEAT-SHEET.md` | ✅ Complete | VS Code / terminal / Claude Code quick reference |
-| `data/pipeline.md` | ✅ Complete | Pending-URLs inbox; 23 offers queued from first scan |
+| `data/pipeline.md` | ✅ Complete | Pending-URLs inbox; 22 offers still pending, 1 processed (ElevenLabs) |
+| `.mcp.json` | ✅ Added (Session 8) | Playwright MCP server config, project-scoped; untracked/uncommitted |
+| `reports/003-elevenlabs-2026-06-21.md` | ✅ Complete | First real evaluation+application; 3.9/5; Block H has live form answers + sourcing notes |
+| `anti-ai-writing-style` skill | ✅ Installed (Session 8) | Global, `~/.claude/skills/`; auto-applies to candidate-facing prose via `modes/_profile.md` pointer |
 
 **Outstanding:**
-1. Template selection feature (choose between visual templates) — deferred
-2. First real application using the completed PDF pipeline
-3. 23 queued offers in `data/pipeline.md` awaiting evaluation
-4. Portfolio site traffic figure (10K shown, should be 12K) — Webflow, not a career-ops file
-5. 8 stale ATS endpoints in `portals.yml` — not urgent
+1. Template selection feature (choose between visual templates) — deferred; Session 8 manually chose ATS-safe per-application, not automated
+2. ~~First real application using the completed PDF pipeline~~ — **done.** ElevenLabs Brand Marketing, applied 2026-06-22
+3. 22 queued offers in `data/pipeline.md` awaiting evaluation (Notion Lifecycle Marketing Manager and Intercom Principal PMM were informally screened out in Session 8 but not marked processed — see Session 8 notes before re-evaluating)
+4. LinkedIn outreach drafted for ElevenLabs (3 messages) but not yet sent
+5. Portfolio site traffic figure (10K shown, should be 12K) — Webflow, not a career-ops file
+6. 8 stale ATS endpoints in `portals.yml` — not urgent
+7. `.playwright-mcp/` artifact directory not yet in `.gitignore`
 
 ---
 
-*Last updated: Session 7, June 18, 2026*
+*Last updated: Session 8, June 22, 2026*

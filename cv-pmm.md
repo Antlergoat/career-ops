@@ -57,6 +57,22 @@ newcalmetals.com | vulcanvents.com | firestormbp.com
 
 ---
 
+## Projects
+
+**Agentic Marketing Pipeline (ICM Methodology)**
+Multi-LLM production system (Claude, ChatGPT, Copilot) covering research, drafting, fact-checking, and final content generation — built to scale campaign output without scaling headcount, applied to GTM content for Vulcan Vents and FireStorm launches.
+
+**Knowledge Infrastructure for AI Workflows** (New Cal Metals, in active use)
+Designed a structured knowledge-management system — intake, classification (public-safe, internal-use, confidential, compliance-sensitive), and canonical knowledge pages — so AI-assisted marketing, sales enablement, and training content stays accurate and audit-ready at scale.
+
+**Yelp Response Bot** (in development)
+Autonomous customer-response agent for a small-business client, integrating Yelp, Zapier, Google Sheets, and Claude — a real-world test of agentic systems handling a live customer touchpoint end-to-end.
+
+**Skill-Mapping Visualization Tool** (personal project, in development)
+Defined the full product architecture for a personal visualization tool — data model, taxonomy, and a phased build plan — before writing a line of application code. Validated the visual direction with three working interactive prototypes (PixiJS + React) ahead of the main build.
+
+---
+
 ## Skills
 
 **Marketing & GTM**
