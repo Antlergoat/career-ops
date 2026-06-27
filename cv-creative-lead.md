@@ -73,6 +73,9 @@ Autonomous customer-response system for a small-business HVAC client, combining 
 **Skill-Mapping Visualization Tool** (personal project, in development)
 Designing a stylized, game-inspired visual system for an interactive knowledge map — including a procedural icon-generation system and multiple progressive visual states. Built in PixiJS and React; three working interactive prototypes shipped ahead of the full build, including a generative icon lab and an animated project-brief microsite.
 
+**Character Pipeline R&D** (personal project, experimental)
+Designing a character pipeline that takes concept art through a 2D-to-3D AI generation stage toward physical toy prototyping. First test conversion succeeded; still early R&D with a small side team, not yet in production.
+
 ---
 
 ## AI + Design Tools

@@ -14,7 +14,25 @@
 const ASHBY_TIMEOUT_MS = 30_000;
 const ASHBY_RETRIES = 2;
 
+// Explicit `api:` override (same convention as providers/greenhouse.mjs) — needed
+// when careers_url points at a company's own corporate careers page (preferred
+// per modes/scan.md) rather than the raw jobs.ashbyhq.com board, so detect() still
+// has something to match on. Unlike greenhouse.mjs's assert-and-throw version,
+// this silently declines (returns false) for a non-Ashby `api:` value instead of
+// throwing — `api:` is a shared field across providers (a tracked_companies entry
+// might be Greenhouse-backed with its own `api:` set), so every other provider
+// must be able to fall through cleanly rather than erroring on each other's URLs.
+function isAshbyApiUrl(url) {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'https:' && parsed.hostname === 'api.ashbyhq.com';
+  } catch {
+    return false;
+  }
+}
+
 function resolveApiUrl(entry) {
+  if (entry.api && isAshbyApiUrl(entry.api)) return entry.api;
   const url = entry.careers_url || '';
   const match = url.match(/jobs\.ashbyhq\.com\/([^/?#]+)/);
   if (!match) return null;

@@ -69,6 +69,9 @@ Autonomous customer-response framework for a small-business HVAC client, linking
 **Skill-Mapping Visualization Tool** (personal project, in development)
 Side project combining systems architecture, data modeling, and creative visual design: an interactive tool that scans real project work and renders findings as a navigable, stylized map. Built in PixiJS and React, with a procedural icon-generation system and three working prototypes delivered ahead of the main application build.
 
+**Character Pipeline R&D** (personal project, experimental)
+A side project combining character design craft with a 2D-to-3D AI generation pipeline aimed at physical toy prototyping — early R&D, one successful test conversion so far, not yet in production.
+
 ---
 
 ## Active Practice

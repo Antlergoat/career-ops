@@ -71,6 +71,9 @@ Autonomous customer-response agent for a small-business client, integrating Yelp
 **Skill-Mapping Visualization Tool** (personal project, in development)
 Defined the full product architecture for a personal visualization tool — data model, taxonomy, and a phased build plan — before writing a line of application code. Validated the visual direction with three working interactive prototypes (PixiJS + React) ahead of the main build.
 
+**Character Pipeline R&D** (personal project, experimental)
+Prototyping an end-to-end character-development pipeline with a 2D-to-3D AI generation stage feeding physical toy prototyping. Validated the core conversion step on a test concept ahead of building out the rest of the pipeline.
+
 ---
 
 ## Skills
