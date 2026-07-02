@@ -258,6 +258,136 @@ https://github.com/andrew-shwetzer/career-ops-plugin
 
 ---
 
+### Session 10 — June 30, 2026 (home machine, Claude Code / VS Code)
+
+**Context:** Re-bootstrapped from SETUP-NOTES.md. career-ops update available (v1.8.1 → v1.15.0) — dismissed, deferred until a retooling session. 45 offers pending in pipeline going in.
+
+**Completed:**
+- **Evaluated and applied to Gilbane Building Company — Senior Marketing Specialist, AMS&T** — report `reports/004-gilbane-2026-06-30.md`, **Score: 3.0/5**, applied 2026-06-30 via iCIMS portal.
+  - AMS&T = Advanced Manufacturing, Science & Technology vertical (semiconductor fabs, research labs, data centers, high-precision facilities). Gilbane is Top-10 ENR contractor, 150-year family-owned company, 45 offices.
+  - Sacramento explicitly listed as a qualifying office location (remote-eligible). Comp: $94,900–$139,900 + profit-sharing/401K.
+  - Score below 4.0 due to: industry direction mismatch (construction-adjacent vs. Nate's AI/creative tools targets), core AEC proposals competency gap, comp midpoint below walk-away.
+  - **Nate's stated rationale for applying:** miserable at current employer, making $115K with no real benefits package, $130K is ideal minimum not true hard floor, AMS&T vertical (advanced materials and science) interesting enough to justify the industry stretch.
+  - Key tailoring: Summary rewritten to lead with technical communications and B2B professional audience experience (architects, contractors, building officials — Gilbane's client base); NCM bullets reordered to surface brand standards/sales enablement/technical documentation first; Core Competencies swapped to AEC-relevant keywords; Projects trimmed to Agentic Pipeline + Knowledge Infrastructure.
+  - PDF: `output/cv-nate-oliver-gilbane-2026-06-30.pdf` (2 pages, ATS-safe template, 123KB)
+  - Gilbane added to `portals.yml` tracked_companies (iCIMS ATS, no zero-token provider — runs as websearch query on future scans).
+- **ElevenLabs closed out** — LinkedIn DM to Luke Harries (2026-06-21) never received a response. Nate chose not to follow up further. Marked cold in follow-ups.md; tracker note updated.
+- **Follow-ups.md entry #3 added** for Gilbane: first follow-up due 2026-07-07, no contact identified yet.
+- **Scanner and pipeline cleanup — Director title exclusion:**
+  - Added `"Director"` to `portals.yml` title_filter.negative — blocks all Director-titled roles (Creative Director, Art Director, Marketing Director, Associate Director, etc.)
+  - Removed `"Creative Director"` and `"Art Director"` from title_filter.positive (now dead entries given the negative)
+  - 6 Director-titled entries removed from pipeline.md: Anthropic Art Director Enterprise, Anthropic Art Director Claude, Unity Director Content Strategy, Blizzard Associate Director Brand & Creative, Runway Creative Director, Cleo Creative Director
+  - `modes/_profile.md` Target Roles note updated to explicitly include Creative Director and Art Director in the exclusion
+  - Pipeline: 45 → 39 pending after Director pruning
+- **Comp context saved to cross-session memory** (`project_comp_context.md`): current salary $115K, no benefits, $130K is ideal not hard floor, total comp + environment weigh heavily in current search.
+
+**Decisions:**
+- Director titles excluded across the board — Creative Director and Art Director included. Nate's reasoning: doesn't feel ready for an actual Director title in either domain, regardless of whether it's craft or management. This is a firm call, not a soft filter.
+- Gilbane application despite sub-4.0 score is consistent with the standing Risk Tolerance override in `_profile.md` — Nate's current situation (dissatisfied at NCM, below-target comp, no benefits) makes the calculus different from a passive opportunistic search.
+- career-ops update (v1.8.1 → v1.15.0) deferred — would require retooling session to preserve customizations.
+
+**Carried forward:**
+- 39 offers pending in `data/pipeline.md` — none evaluated yet (Notion Lifecycle Marketing Manager and Intercom Principal PMM still in Pending despite informal screen-out in Session 8).
+- Meshy second follow-up due ~2026-07-03 (Hannah Zhou, no response yet).
+- Gilbane first follow-up due 2026-07-07 — find AMS&T hiring manager or recruiter on LinkedIn first (`/career-ops contacto`).
+- The "bigger net" company list (42 names from Session 9 Level 3 scan) — still unreviewed for portals.yml addition.
+- Unity Technologies still UNRESOLVED (their careers site 404s on job detail pages).
+- `location_filter` always-allow substring loophole (international "Remote" roles) — noted but not fixed.
+- Template selection feature — still deferred.
+- Portfolio traffic figure (10K shown, should be 12K) — Webflow, not career-ops.
+- career-ops update v1.15.0 pending — schedule a retooling session when ready.
+
+---
+
+### Session 11 — June 30, 2026 (home machine, Claude Code / VS Code)
+
+**Context:** Continuation of Session 10 (same night, Nate returned after signing off). No re-bootstrap needed — context carried over.
+
+**Completed:**
+- **Pipeline diversity audit** — Nate correctly identified the pipeline as over-concentrated in high-profile AI/tech companies (Anthropic, Perplexity, Runway, etc.) with no breadth. Root cause: portals.yml `tracked_companies` was curated from a prestige-first wish list. The `search_queries` also only targeted known company names, not role titles.
+- **Showed the 42-company list from Session 9** (discovered via Level 3 broad sweep but never reviewed) — Nate selected 15 bolded candidates for addition. Airtable was already tracked, so 14 net new from that list.
+- **Addressed the NCM-as-liability misconception:** Nate was concerned his 7 years at New Cal Metals (construction materials manufacturer) would make him look non-tech. Reframe: his ROLE was full-stack marketing, not manufacturing; the industry context is mostly irrelevant to tech companies hiring for marketing skills. Exception: AEC tech companies (Procore, Trimble, Bluebeam) where his buyer-persona knowledge of contractors and building officials is a genuine differentiator, not a liability.
+- **Expanded portals.yml — 21 new tracked companies across 4 new sections:**
+  - *Broader Net (from Session 9 discovery):* Writer, Superside, Creative Force, Vidmob, Grafana Labs, Toast, Temporal Technologies, Circle.so, Close, TheyDo, Away, Tonal, Pair Eyewear, Boulevard (14 companies — Airtable was already tracked)
+  - *AEC Tech:* Procore, Trimble, Bluebeam (3 companies — Nate's NCM background is an asset here)
+  - *Creative Ops & DAM:* Bynder, Brandfolder/Smartsheet (2 companies)
+  - *Industrial / Manufacturing SaaS:* PTC, Tulip (2 companies)
+- **Expanded portals.yml — 6 new search queries:**
+  - 3 title-first sweeps (Greenhouse/Ashby/Lever): "Senior Brand Marketing Manager", "Senior Marketing Manager", "Senior Product Marketing Manager" — cast by role title, not company name
+  - AEC Tech LinkedIn vertical sweep
+  - Creative Ops & Design Platform LinkedIn vertical sweep
+  - Industrial & Manufacturing SaaS LinkedIn vertical sweep
+- **Ran full 4-level scan** (background subagent, 123 tool calls, ~11 min):
+  - Level 0 (scan.mjs): 25 companies, 1,649 jobs found, 3 new added (Writer Sr PMM, Asana Sr PMM, Zendesk Sr PMM AI)
+  - Level 1 (Playwright): OpenAI board (6 roles), Grafana Labs (1 role) — 7 new added
+  - Level 3 (WebSearch + Playwright liveness check): 12 queries run; 10 URLs dead/expired; 1 new added (HubSpot Lead Product Marketer, Developer Platform — $144K–$216K remote)
+  - 404 errors on new companies: Procore (Greenhouse slug wrong), Circle.so (Ashby slug wrong), Trimble (Workday URL needs adjustment), Unity (ongoing from Session 9)
+  - 10 Level 3 dead links: Tonal Sr Brand Mgr, Away Brand Mgr, Close Sr PMM, TheyDo Sr PMM, Circle.so PMM ×2, Grafana PMM ×2, Toast PMM, HubSpot pricing role — those verticals currently have no open roles matching the filter
+- **Caught and removed Runway Art Director** from pipeline.md — slipped through the Session 10 Director cleanup (Runway Creative Director was removed but Art Director was missed). Removed now.
+- **Pipeline: 39 → 49 pending** (11 added by scan, 1 removed as Director-titled)
+
+**Notable new finds from this scan:**
+
+| Company | Role | Comp | Notes |
+|---|---|---|---|
+| Writer | Sr PMM, Platform & LLMs | — | SF. First hit from new companies added today. |
+| HubSpot | Lead Product Marketer, Developer Platform | $144K–$216K remote | Best comp of the scan. Strong find. |
+| Grafana Labs | Regional Marketing Manager | — | Remote US. First hit from new Grafana addition. |
+| OpenAI | PMM/Marketing roles ×6 | — | All SF Hybrid — flag per location policy (−0.3–0.5 in scoring) |
+| Zendesk | Sr PMM, AI Platform | — | SF. AI-focused PMM. |
+
+**Decisions:**
+- NCM background is a genuine differentiator for AEC tech companies, not a liability. Frame accordingly in any AEC tech evaluation — lead with buyer-persona knowledge (contractors, building officials, specifiers, architects), not just marketing skills.
+- Title-first search queries (not company-specific) are now the primary discovery mechanism alongside company-specific tracking. This structurally addresses the "only dream companies" problem.
+- The 10 dead Level 3 links are not an error — they're validation that those companies don't have open roles right now. The scanner will catch them on the next run when something posts.
+
+**Carried forward:**
+- **49 pending offers** in pipeline.md — none evaluated yet.
+- Procore, Circle.so, Trimble ATS configurations are wrong — 404'd this scan. Fix slugs next session.
+- Unity Technologies still UNRESOLVED (ongoing from Session 9).
+- Meshy follow-up #2 due ~2026-07-03 (Hannah Zhou, still no response).
+- Gilbane first follow-up due 2026-07-07 — find AMS&T contact first (`/career-ops contacto`).
+- Asana has a possible duplicate: same title "Sr PMM, Asana Service Management" appears twice with different job IDs (7920814 from before, 8038678 from this scan) — verify before evaluating.
+- All other carried-forward items from Session 10 unchanged.
+
+---
+
+### Session 12 — July 1, 2026 (home machine, Claude Code / VS Code)
+
+**Context:** Re-bootstrapped from SETUP-NOTES.md. 49 offers pending going in.
+
+**Completed:**
+- **Full auto-pipeline on OneSignal — Product Marketing Manager** — report `reports/005-onesignal-2026-07-01.md`, **Score: 3.3/5**, applied 2026-07-01. Req ID: 26Q1GTM01.
+  - ATS: Gem (jobs.gem.com) — not Greenhouse/Ashby/Lever; no zero-token provider. Verified live via Playwright (title + full JD + application form active).
+  - Comp: $130K–$155K base (NY/CA) + equity + benefits. Remote US, California supported. Loomis CA eligible.
+  - Key gaps: "4+ years at B2B SaaS" requirement (NCM is a manufacturer); developer audience (SDKs, APIs) is new territory. Risk Tolerance override applied — B2B SaaS résumé entry has compounding value for the next search.
+  - Key strengths: 0→1 launch execution, sales enablement library, AI marketing workflows (ICM methodology), CA remote-eligible.
+  - Base: `cv-pmm.md`. Tailoring: NCM bullets reordered to lead with sales enablement + launch; developer audience gap bridged via technical B2B audience analog (architects, contractors, building officials); AI marketing fluency foregrounded.
+  - PDF: `output/cv-nate-oliver-onesignal-2026-07-01.pdf` (2 pages, ATS-safe template, 129KB)
+  - OneSignal added to `portals.yml` tracked_companies.
+- **Cover letter written and PDF'd** — `output/cover-letter-onesignal-2026-07-01.pdf` (1 page, 66KB). Matched CV header design (Space Grotesk + gold rule). Two paragraphs: (1) 0→1 launches + PMM motion; (2) AI in production + Yelp/SMS personal angle + open-source CLI pipeline meta-detail. Anti-AI style applied: no em-dashes, no throat-clearing, concrete claims throughout.
+- **Anti-AI writing style skill installed** — copied from `D:\AI\Projects\NCM-LLM-Wiki\.agents\skills\anti-ai-writing-style\` into `.agents/skills/anti-ai-writing-style/` (repo-scoped install). Now available to all future sessions in this project.
+- **LinkedIn outreach — Irmina Myszkowska (Director of Product Marketing, OneSignal)** — confirmed via Google/LinkedIn search as direct hiring manager for this role (Jason Seeba's public post explicitly names her as the PMM this person would work with). DM sent day-of-application. Follow-up due 2026-07-08 if no response. Logged in `data/follow-ups.md` (#4).
+- **Pipeline triage** — user reviewed all 49 pending URLs and ditched 14: Anthropic Policy Comms, Anthropic Policy Design, Perplexity Exec Comms, ElevenLabs Comms Manager, Notion Enterprise PMM, Intercom Principal PMM, Intercom Sr Field Marketing (Brand Activations), Asana Sr PMM (Service Management, one of two duplicates), Higgsfield AI GTM, Mercury Sr PMM API & Agentic Banking, thatgamecompany Indonesia/Creative Services/Brand Partner ×3, Writer Sr PMM. Added `## Ditched` section to pipeline.md with backfilled date-stamped entries so removed URLs stay on record.
+- **Pipeline: 49 → 35 pending** after ditching 14. Dashboard regenerated (5 applications, 35 pending, avg 3.7).
+
+**Decisions:**
+- Cover letter dash-reduction: em-dashes are now a recognized AI tell in Nate's writing review process. Anti-AI style skill covers this going forward.
+- Yelp response agent / OneSignal SMS detail: disclosed in cover letter as a genuine personal-use case — treated as a differentiator for a developer-platform PMM role, not a gimmick. Kept in.
+- Pipeline triage as a new workflow: user prefers to go through a numbered list and call out items to ditch by number, rather than evaluating each one formally. Implemented today as an ad-hoc pattern — worth formalizing as a `/career-ops triage` shortcut if this recurs.
+
+**Carried forward:**
+- **35 pending offers** in pipeline.md — none evaluated yet.
+- Meshy follow-up #2 due ~2026-07-03 (Hannah Zhou, no response yet).
+- Gilbane first follow-up due 2026-07-07 — contact still TBD (find AMS&T hiring manager on LinkedIn).
+- OneSignal follow-up due 2026-07-08 (Irmina Myszkowska) if no response.
+- Procore, Circle.so, Trimble ATS config slugs still 404 — not fixed this session.
+- Unity Technologies still UNRESOLVED (ongoing from Session 9).
+- career-ops update v1.15.0 still pending — schedule retooling session.
+- Asana duplicate (two "Sr PMM, Asana Service Management" entries with different job IDs) — still unverified.
+
+---
+
 ## Targeting Decisions (Locked)
 
 ### Role Type Preference (ranked)
