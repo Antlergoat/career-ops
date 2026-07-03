@@ -388,6 +388,47 @@ https://github.com/andrew-shwetzer/career-ops-plugin
 
 ---
 
+### Session 13 — July 3, 2026 (home machine, Claude Code / VS Code)
+
+**Context:** Re-bootstrapped from SETUP-NOTES.md. 6 applications, 35 pending going in.
+
+**Completed:**
+- **Full auto-pipeline on Accenture Song — Visual Design Manager** — report `reports/006-accenture-song-2026-07-03.md`, **Score: 3.8/5**, applied 2026-07-03 via Workday. Req ID: R00331160.
+  - Found via Indeed (jk=e44f2f1711cf47e8); canonical URL: accenture.com/us-en/careers/jobdetails?id=R00331160_en. ATS: Workday.
+  - Accenture Song = Accenture's creative arm, 70 studios, 4,000+ designers. Sacramento studio at 1610 R Street. NVIDIA Rule applied.
+  - Comp: $94,400–$266,300 CA range; realistic $130K–$170K at Manager level.
+  - Key strengths: 30+ years visual craft (Hollywood + AAA games + brand systems), AI as production practice (Midjourney, Higgsfield, ICM methodology), Art Institute degree direct match, Sacramento local.
+  - Key gaps: No direct visual design team management (3+ years required); agency/consultancy environment is new.
+  - Base: `cv-creative-lead.md`. Tailoring: Hollywood/AAA credits lead for craft credibility; AI workflows foregrounded; ICM methodology replacing Stable Diffusion/ComfyUI (accuracy correction — Nate has only briefly touched SD/ComfyUI).
+  - PDF: `output/cv-nate-oliver-accenture-song-2026-07-03.pdf` (2 pages, 128KB)
+  - Cover letter: `output/cover-letter-accenture-song-2026-07-03.pdf` (1 page, 68KB). Matched CV design.
+  - Applied via Workday Autofill with Resume.
+- **LinkedIn outreach — Emilie Saylor (Art Director, Accenture Song Sacramento)** — Art Institute alum hook (her: Sacramento; Nate: LA). Direct, no-fluff tone. Nate's own words: "I hate LinkedIn fluff... say hi to a humane before my resume gets processed by the nano-bots." Signed "Respects." Logged follow-up #5, due 2026-07-10.
+- **Location correction** — "Loomis, CA" replaced with "Sacramento, CA" everywhere in public-facing materials (CV, report Block H, article-digest.md). `profile.yml` `candidate.location` was already correct; `location.city` stays as Loomis internally for geography scoring.
+- **Accuracy correction** — Stable Diffusion/ComfyUI removed from CV, cover letter, and article-digest.md. Nate has only briefly experimented with these tools. Replaced with ICM methodology content engine framing, which is more accurate and a stronger signal for team-replicable AI workflows.
+- **Dashboard regenerated** — 6 applications, 35 pending, avg 3.7.
+
+**Decisions:**
+- Stable Diffusion/ComfyUI is not a credible claim at this point — removed from all materials. The ICM methodology is the honest and stronger AI differentiator.
+- "Sacramento, CA" is the correct public-facing location going forward. Loomis stays in internal config only.
+- Accenture Song cover letter tone: stripped the "curious about studio culture" angle (too crafted) in favor of direct authenticity — Nate's instinct was right.
+
+**Carried forward:**
+- **6 applications** — Meshy, ElevenLabs, Quick Quack (rejected), Gilbane, OneSignal, Accenture Song.
+- **Follow-ups due:**
+  - July 3 (today) — Meshy #2, Hannah Zhou — check if sent
+  - July 7 — Gilbane first follow-up, contact still TBD
+  - July 8 — OneSignal / Irmina Myszkowska if no response
+  - July 10 — Accenture Song / Emilie Saylor if no response
+- Procore, Circle.so, Trimble ATS slugs still 404 — not fixed.
+- Unity Technologies still UNRESOLVED.
+- Targeting questionnaire sent to nate@nateoliver.net — not yet answered.
+- Asana duplicate still unverified.
+- 35 pending offers unreviewed.
+- career-ops update v1.15.0 deferred.
+
+---
+
 ## Targeting Decisions (Locked)
 
 ### Role Type Preference (ranked)
