@@ -260,7 +260,7 @@ The combination of production craft + AI pipeline architecture + marketing leade
 
 ## Compensation & Logistics
 
-- **Geography:** Loomis, CA (Sacramento region). Strong preference for remote or hybrid.
+- **Geography:** Sacramento, CA. Strong preference for remote or hybrid.
   Open to Sacramento-area commute. San Francisco Bay Area commute is a stretch.
 - **Comp expectations:** Research current market for target role/level. Flag any role where
   stated range appears significantly below market for the scope described.

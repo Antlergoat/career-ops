@@ -429,6 +429,34 @@ https://github.com/andrew-shwetzer/career-ops-plugin
 
 ---
 
+### Session 14 — July 8, 2026 (home machine, Claude Code / VS Code)
+
+**Context:** Re-bootstrapped from SETUP-NOTES.md. Nate reported the first employer response of the search: Accenture Song rejection.
+
+**Completed:**
+- **Accenture Song rejected** — form email received 2026-07-08, five days after applying (Req R00331160). Read: didn't clear recruiter screen, likeliest tripwire the hard "3+ years managing a visual design team" requirement the report had already flagged. Tracker → Rejected; Emilie Saylor follow-up (was due 7/10) canceled. Reapply-friendly language in the email; no bridges burned.
+- **Meshy closed cold** per Nate's call — second follow-up to Hannah Zhou (due ~7/3) never sent and deliberately skipped. 47 days, two touches, zero response. Logged in tracker + follow-ups.
+- **LinkedIn constraint discovered and saved to memory** (`project_linkedin_constraint.md`): Nate's free-tier LinkedIn sends outreach as connection requests with notes; until accepted, NO further message is possible. Every prior "no response" to an unaccepted request means *never seen*, not read-and-ignored. Follow-up cadence redesigned around this: connection notes are one-shot; email is the real follow-up channel.
+- **Gilbane clarification:** the "follow-up" was never sent — Nate had reached out to Matt Martin (Recruiting Manager) and Alisha Johnson (Sr TA Partner) on 2026-07-01, both as still-pending connection requests. Contact research run this session surfaced **Laura Onessimo** (VP BD for AMS&T, ex-VP Global Marketing — owns the exact vertical) as the marketing-side escalation.
+- **Gilbane outreach sent:** Nate messaged Onessimo on LinkedIn 2026-07-08 in his own voice ("Happy, almost Thursday" / "Anyhoot" / "-Respects"), referral-pointer ask. Email attempts to Matt Martin failed — both matt.martin@ and mmartin@gilbaneco.com bounced (late bounce on the second; probable name-collision mailbox). Email channel to Matt abandoned; Alisha held in reserve; decision: stop guessing Gilbane addresses, let Onessimo ride.
+- **OneSignal email follow-up saga:** LinkedIn re-message blocked (Irmina's 7/1 request unaccepted). Email sent 2026-07-08 — first to irmina@onesignal.**co** (typo, Cloudflare-routed domain, undelivered), then irmina@onesignal.com (bounced), finally to imyszkowska@ + irminam@onesignal.com in one To+BCC send — awaiting bounces at session end; whichever survives is her address.
+- Dashboard regenerated: 6 applications, 35 pending, avg 3.7.
+
+**Decisions:**
+- Meshy: no third touch — LinkedIn-only threads that never got accepted aren't worth a second DM.
+- Outreach logging must now record *connection request (pending/accepted)* vs. *delivered email* — the distinction determines whether follow-up is even possible.
+- Gilbane got four lines in the water (2 pending requests, Onessimo LinkedIn, dead email attempts) — that's the ceiling; no fifth contact.
+- Email pattern-guessing rule of thumb: worth trying for rare surnames (Myszkowska — collision-free), stop after two bounces for common ones (Martin, Johnson).
+
+**Carried forward:**
+- **~July 15 check-ins:** Onessimo (Gilbane) and Irmina (OneSignal, clock restarts from today's delivered send).
+- OneSignal address: imyszkowska@ bounced end of session; irminam@onesignal.com is the surviving candidate — confirm no late bounce next session. If it bounced too, stop guessing and find an alternate route in.
+- 5 applications standing: Meshy (cold), ElevenLabs (cold), Quick Quack + Accenture Song (rejected), Gilbane + OneSignal (live threads).
+- 35 pending offers still unreviewed — only two live applications in the water; pipeline evaluation is the next big lever.
+- Unchanged: Procore/Circle.so/Trimble slugs 404, Unity unresolved, Asana duplicate unverified, targeting questionnaire unanswered, career-ops v1.15.0 deferred, `article-digest.md` modified-uncommitted since Session 13.
+
+---
+
 ## Targeting Decisions (Locked)
 
 ### Role Type Preference (ranked)
